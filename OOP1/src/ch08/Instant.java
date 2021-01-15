@@ -15,6 +15,8 @@ public class Instant extends JFrame{
 		
 		setLayout(new BorderLayout());
 		setSize(300,500);
+//		panel.setPreferredSize(new Dimension(300,500));
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		

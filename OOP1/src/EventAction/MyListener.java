@@ -18,7 +18,19 @@ public class MyListener extends JFrame{
 		panel.setLayout(null);
 		button.setBounds(300, 100, 120, 50);
 		label.setBounds(200,200,150,70);
-		button.addActionListener(new Listener());
+//		button.addActionListener(new Listener());
+		button.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==button&&button.getText().equals("눌렀습니다")) {
+					button.setText("눌러주세요~");
+					label.setText("입력해주세요~");
+				}else {
+					button.setText("눌렀습니다");
+					label.setText("입력되었습니다");
+				}
+			}
+		});
 		
 		this.add(panel);
 		panel.add(button);
@@ -26,19 +38,19 @@ public class MyListener extends JFrame{
 		
 		setVisible(true);
 	}
-	public class Listener implements ActionListener{
-		public void actionPerformed(ActionEvent e) {
-			if(e.getSource()==button&&button.getText().equals("눌렀습니다")) {
-				button.setText("눌러주세요~");
-				label.setText("입력해주세요~");
-			}else {
-				button.setText("눌렀습니다");
-				label.setText("입력되었습니다");
-			}
-//			JButton button = (JButton)e.getSource();
-			
-		}
-	}
+//	public class Listener implements ActionListener{
+//		public void actionPerformed(ActionEvent e) {
+//			if(e.getSource()==button&&button.getText().equals("눌렀습니다")) {
+//				button.setText("눌러주세요~");
+//				label.setText("입력해주세요~");
+//			}else {
+//				button.setText("눌렀습니다");
+//				label.setText("입력되었습니다");
+//			}
+////			JButton button = (JButton)e.getSource();
+//			
+//		}
+//	}
 	public static void main(String[] args) {
 		MyListener box = new MyListener();
 	}

@@ -17,7 +17,7 @@ public class IconTest extends JFrame{
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Image img = kit.getImage("src\\GUITest\\7joun.png");
+//		Image img = kit.getImage("src\\GUITest\\7joun.png");
 //		Image img = kit.getImage("src\\GUITest\\egg.gif");
 		//image 클래스에 img 변수에 기본툴 kit를 이용하여 image 구해옴.
 		//경로는 기본적으로 프로젝트 안에 잡혀있음. 그래서 하위폴더인
@@ -27,9 +27,20 @@ public class IconTest extends JFrame{
 		//png파일도 됨... 근데 지원하는 사이즈가 너무너무 작아서
 		//크기가 큰 파일을 넣어도 안보임...
 		
-		setIconImage(img);
+		ImageIcon img1 = new ImageIcon("src\\GUITest\\7joun.png");
+		JPanel back = new JPanel() {
+			public void paintCompopent(Graphics g) {
+				g.drawImage(img1.getImage(),0,0,null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		JScrollPane scp=new JScrollPane(back);
+		setContentPane(scp);
+		
+//		setIconImage(img);
 		//icon을 변수로 설정;
-		setLayout(new FlowLayout());
+//		setLayout(new FlowLayout());
 		
 		
 		
