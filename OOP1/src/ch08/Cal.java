@@ -14,7 +14,7 @@ public class Cal extends JFrame implements ActionListener{
 	private JButton cle = new JButton("Clear");
 	private JButton add, min, mul, div, dec, equ;
 	private JButton[] numButton= new JButton[10]; 
-	private Font myFont = new Font(Font.SANS_SERIF, Font.BOLD, 30);
+	private Font myFont = new Font(Font.SANS_SERIF, Font.BOLD | Font.ITALIC, 30);
 	private ImageIcon img = new ImageIcon("src\\GUITest\\7joun.png");
 	
 	private double num1;
